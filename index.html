@@ -8,7 +8,7 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
     <style>
-        /* ИСПРАВЛЕНИЕ: Масштабируемое название компании в хедере */
+        
         #header .logo span { 
             font-size: clamp(0.7rem, 2vw, 1.2rem); 
             white-space: nowrap;
@@ -18,9 +18,9 @@
         #header .logo {
             display: flex !important;
             align-items: center;
-            gap: 10px; /* Отступ между КЭК и текстом */
+            gap: 10px; /*  КЭК  */
         }
-        /* 1. Создаем отступы между плашками и задаем фон для всей секции */
+        
         .tiles {
             display: flex;
             flex-wrap: wrap;
@@ -46,7 +46,7 @@
             width: 100% !important;
         }
 
-        /* ИСПРАВЛЕНИЕ: Адаптивность стикеров (чтобы не перекрывали всё при уменьшении) */
+        /* Адапт */
         .sticker-img {
             width: clamp(60px, 15vw, 120px) !important;
             height: auto !important;
@@ -55,7 +55,7 @@
         @media screen and (max-width: 480px) {
             .tiles { padding: 10px; gap: 10px; }
             .tiles article { width: 100% !important; }
-            /* Скрываем стикеры на мобилках до нажатия */
+            
             .sticker-anim { opacity: 0; transform: scale(0.8); transition: 0.3s; }
             .tiles article:active .sticker-anim { opacity: 1; transform: scale(1); }
             
@@ -79,13 +79,13 @@
             padding: 4em 0 2em 0 !important;
         }
 
-        /* ИСПРАВЛЕНИЕ: Увеличение главного заголовка */
+        
         #banner h1 {
             font-size: clamp(1.8rem, 5vw, 3.5rem) !important;
             margin: 0;
         }
 
-        /* Увеличение текста в баннере (Кемерово) */
+        
         #banner .content p {
             font-size: clamp(1.1rem, 2.5vw, 1.8rem);
             line-height: 1.4;
