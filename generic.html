@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* Увеличение логотипа */
+        
         #header .logo span { font-size: clamp(0.7rem, 2vw, 1rem); }
     #header .logo strong { font-size: clamp(1rem, 3vw, 1.5rem); }
 
@@ -15,20 +15,20 @@
     #header .logo {
             display: flex !important;
             align-items: center;
-            gap: 10px; /* Отступ между КЭК и текстом */
+            gap: 10px; 
         }
     .hover-sticker-btn {
         position: absolute; top: -45px; right: -25px;
-        width: clamp(60px, 15vw, 85px); /* Адаптивный размер стикера на кнопке */
+        width: clamp(60px, 15vw, 85px); 
         opacity: 0; transition: all 0.3s ease; pointer-events: none;
     }
     .btn-sticker-container:hover .hover-sticker-btn { opacity: 1; transform: translateY(-5px); }
     
     @media screen and (max-width: 736px) {
-        .hover-sticker-btn { opacity: 1; top: -35px; } /* На мобилках виден сразу */
+        .hover-sticker-btn { opacity: 1; top: -35px; } 
     }
 
-        /* Скругление и стиль кнопок */
+        
         .button {
             border-radius: 8px !important;
             transition: all 0.3s ease !important;
@@ -48,7 +48,7 @@
             }
         }
         
-        /* Карточка с ценой */
+        
         .order-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
@@ -61,7 +61,7 @@
         }
         .order-card h2 { margin-bottom: 1rem; }
         
-        /* Стили модального окна */
+        
         .modal-overlay {
             display: none;
             position: fixed;
