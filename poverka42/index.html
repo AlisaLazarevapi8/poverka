@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>ПОВЕРКА СЧЕТЧИКОВ КЕМЕРОВО</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
+    <style>
+        /* ИСПРАВЛЕНИЕ: Масштабируемое название компании в хедере */
+        #header .logo span { 
+            font-size: clamp(0.7rem, 2vw, 1.2rem); 
+            white-space: nowrap;
+            display: inline-block;
+        }
+        #header .logo strong { font-size: clamp(1rem, 3vw, 1.6rem); }
+        #header .logo {
+            display: flex !important;
+            align-items: center;
+            gap: 10px; /* Отступ между КЭК и текстом */
+        }
+        /* 1. Создаем отступы между плашками и задаем фон для всей секции */
+        .tiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(20, 20, 25, 0.5);
+        }
+
+        .tiles article {
+            width: calc(50% - 10px) !important;
+            margin-bottom: 0 !important;
+            border-radius: 20px !important;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tiles article:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .tiles article:last-child {
+            width: 100% !important;
+        }
+
+        /* ИСПРАВЛЕНИЕ: Адаптивность стикеров (чтобы не перекрывали всё при уменьшении) */
+        .sticker-img {
+            width: clamp(60px, 15vw, 120px) !important;
+            height: auto !important;
+        }
+
+        @media screen and (max-width: 480px) {
+            .tiles { padding: 10px; gap: 10px; }
+            .tiles article { width: 100% !important; }
+            /* Скрываем стикеры на мобилках до нажатия */
+            .sticker-anim { opacity: 0; transform: scale(0.8); transition: 0.3s; }
+            .tiles article:active .sticker-anim { opacity: 1; transform: scale(1); }
+            
+            #header .logo span { display: block; line-height: 1.2; padding-top: 0.2em; white-space: normal; font-size: 0.9em; }
+        }
+
+        #two header.major h2 { display: inline-block; vertical-align: middle; }
+        #two header.major { width: 100%; }
+
+        .button {
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #banner {
+            min-height: 40vh !important;
+            padding: 4em 0 2em 0 !important;
+        }
+
+        /* ИСПРАВЛЕНИЕ: Увеличение главного заголовка */
+        #banner h1 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem) !important;
+            margin: 0;
+        }
+
+        /* Увеличение текста в баннере (Кемерово) */
+        #banner .content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        .tiles article:before {
+            background-color: rgba(20, 20, 25, 0.4) !important; 
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+        .tiles article:hover:before {
+            background-color: rgba(20, 20, 25, 0.75) !important;
+        }
+        
+        .tiles article > .link { display: none !important; }
+        .tiles article header, .tiles article div { position: relative; z-index: 10; }
+
+        .sticker-anim {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+        }
+        .tiles article:hover .sticker-anim {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        @media screen and (max-width: 480px) {
+            #banner { min-height: auto !important; padding: 3em 0 2em 0 !important; }
+            #banner .content p { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><strong>КЭК</strong> <span>Кузбасская Энергосервисная Компания</span></a>
+            <nav><a href="#menu">Меню</a></nav>
+        </header>
+
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="generic.html">Поверка водосчетчиков</a></li>
+                <li><a href="landing.html">Поверка приборов учета</a></li>
+                <li><a href="elements.html">Аккредитация</a></li>
+                <li><a href="#contact">Связаться</a></li>
+            </ul>
+        </nav>
+
+        <section id="banner" class="major" style="background-image: linear-gradient(rgba(20, 20, 25, 0.5), rgba(20, 20, 25, 0.5)), url('images/IMG_7038.PNG'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="inner">
+                <header class="major" style="display: flex; align-items: center; justify-content: flex-start; gap: 15px;">
+                    <h1>Официальная поверка водосчётчиков и теплосчётчиков</h1>
+                </header>
+                <div class="content">
+                    <p>Кемерово и Кемеровская область</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="main">
+            <section id="one" class="tiles">
+                <article>
+                    <span class="image"><img src="images/IMG_7040.jpg" alt="Водосчетчики" /></span>
+                    <div style="position: absolute; top: 5%; right: 5%; pointer-events: none; z-index: 10;">
+                        <div class="sticker-anim">
+                            <img src="images/Group 6.png" alt="Стикер прайс" class="sticker-img" style="filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.4));">
+                        </div>
+                    </div>
+                    <header class="major" style="padding-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;">Поверка водосчетчиков</h3>
+                        <a href="generic.html" class="button primary">Выезд мастера на дом</a>
+                    </header>
+                </article>
+                
+                <article>
+                    <span class="image"><img src="images/IMG_7039.jpg" alt="Теплосчетчики" /></span>
+                    <div style="position: absolute; top: 30%; left: 5%; transform: translateY(-50%); pointer-events: none; width: 90%; z-index: 10;">
+                        <div class="sticker-anim" style="display: flex; align-items: flex-end; justify-content: flex-start; gap: 10px;">
+                            <img src="images/Group 5.png" alt="Мастер 1" class="sticker-img" style="filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.4));">
+                            <img src="images/Group 4.png" alt="Мастер 2" class="sticker-img" style="filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.4));">
+                        </div>
+                    </div>
+                    <header class="major" style="top: 15%; padding-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;">Поверка приборов учета</h3>
+                        <a href="landing.html" class="button primary">Прайс лист и звонок специалисту</a>
+                    </header>
+                </article>
+
+                <article style="width: 100%; height: 30vh; min-height: 250px;">
+                    <span class="image"><img src="images/pic03.jpg" alt="Документы" /></span>
+                    <div style="position: absolute; right: 5%; bottom: 5%; pointer-events: none; display: flex; align-items: flex-end; gap: 15px; z-index: 10;">
+                        <img src="images/Group 3.png" alt="Стикер прайс" class="sticker-img" style="filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.5));">
+                        <img src="images/Group 2.png" alt="Стикер аккредитация" class="sticker-img" style="filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.5));">
+                    </div>
+                    <header class="major" style="padding-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.5rem;">Аккредитация</h3>
+                        <a href="elements.html" class="button primary">Наши документы</a>
+                    </header>
+                </article>
+            </section>
+            <section id="two">
+                <div class="inner">
+                    <header class="major"><h2>ООО «Кузбасская Энергосервисная Компания»</h2></header>
+                    <p>Официальная поверка средств измерений. Работаем быстро, качественно и с внесением данных в ФГИС «АРШИН».</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="contact">
+            <div class="inner">
+                <section style="width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                    <section style="flex: 1; min-width: 200px;">
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-phone"></span>
+                            <h3>Водосчетчики</h3>
+                            <span>8 (3842) 44-44-40<br />8 906 930 7810</span>
+                        </div>
+                    </section>
+                    <section style="flex: 1; min-width: 200px;">
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-phone"></span>
+                            <h3>Приборы учета</h3>
+                            <span>8 913 433 34 44<br />8 913 433 35 55</span>
+                        </div>
+                    </section>
+                    <section style="flex: 1; min-width: 200px;">
+                        <div class="contact-method">
+                            <span class="icon alt" style="display: inline-flex; align-items: center; justify-content: center; padding: 0; background: transparent; border: none; box-shadow: none;">
+                                <img src="images/max.png" alt="MAX" style="width: 3.25rem; height: 3.0rem; border-radius: 50%; object-fit: cover;" />
+                            </span>
+                            <h3>Мессенджер</h3>
+                            <a href="https://max.ru/u/f9LHodD0cOKAPBx15FVZjlM2vjiU8stVE76yJv9kDicQuUkltRq8aHY3ylo" class="button primary small" target="_blank">Написать в МАХ</a>
+                        </div>
+                    </section>
+                    <section style="flex: 1; min-width: 200px;">
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-envelope"></span>
+                            <h3>Почта</h3>
+                            <span>byx2019@yandex.ru</span>
+                        </div>
+                    </section>
+                    <section style="flex: 1; min-width: 200px;">
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-home"></span>
+                            <h3>Адрес</h3>
+                            <span>ул. Железнодорожная, д. 43, офис 5<br />Кемерово, 650010<br />Россия</span>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <footer id="footer"><div class="inner"><ul class="copyright"><li>&copy; ООО «КЭК»</li></ul></div></footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
